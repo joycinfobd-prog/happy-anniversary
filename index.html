@@ -1897,22 +1897,22 @@ document.addEventListener('DOMContentLoaded', () => {
 সেই আদর গুলো এখনো চোখের সামনে ভাসে। হাওয়াই মিঠাই এ কত আদর করলাম। হানি-বি তে আদর করলাম। চুমু দিলাম, তুমি আমার বি তে আদর দিলে, চুমু দিলে। স্নান করার সময়ইও হাওয়াই মিঠাই এ সাবান লাগিয়ে দিলাম সাথে আদর করলাম। হাওয়াই মিঠাই নিলে খেলা করলাম। সব চোখে ভাসে এখনো।", "ready": "আয়নার সামনে তোমাকে নিজের চোখে সাজতে দেখা, আর মাঝে মাঝে নিজেও তোমার পাশে দাঁড়িয়ে রেডি হওয়া, ছোট্ট কিন্তু একটা মধুর মুহূর্ত। সামনে থেকে তোমাকে সাজতে দেখা এটার মধ্যেও একটা সুখ আছে। আমাকেও রেডি করে দিলে তুমি। একসাথে বের হলাম আমরা বাইরে ঘুরতে যাওয়ার জন্য।", "outing": "রেডি হয়ে দুজনে মিলে বের হওয়া, রাস্তায় হাটা। সাধারণ একটা বিকেল হয়ে উঠেছিল অসাধারণ। রিকশা নিয়ে ঘুরলাম, গেলাম গার্ডেন এ, সেখানে বসে চা খেলাম, গল্প করলা, আড্ডা দিলাম। সন্ধ্যা হয়ে গেলে তোমাকে বাসায় যাওয়ার জন্য রিকশাতে তুলে দিলাম আর আমিও রওনা গলার বাড়ি আসার জন্য। "};
   var FEB10_BTNS = [["cooking", "রান্না ও খাওয়া", "🍳"], ["bathing", "একসাথে স্নান", "🚿"], ["ready", "Ready হওয়া", "👕"], ["outing", "ঘুরতে বের হওয়া", "🌆"]];
   var grid = document.getElementById('feb10Grid');
-  if (grid && !grid.dataset.built){
-    grid.dataset.built = '1';
-    FEB10_BTNS.forEach(function(b){
-      var key = b[0], label = b[1], icon = b[2];
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'letter-btn';
-      btn.innerHTML = '<span class="ico">' + icon + '</span>' + label;
-      btn.addEventListener('click', function(){
-        document.getElementById('letterModalTitle').textContent = label;
-        document.getElementById('letterModalBody').textContent = FEB10[key];
-        document.getElementById('letterModal').classList.add('show');
-      });
-      grid.appendChild(btn);
-    });
-  }
+ if (grid && !grid.dataset.built){
+        grid.dataset.built = '1';
+        FEB10_BTNS.forEach(function(b){
+            var key = b[0], label = b[1], icon = b[2];
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'letter-btn';
+            btn.innerHTML = '<span class="ico">' + icon + '</span>' + label;
+            btn.addEventListener('click', function(){
+                document.getElementById('letterModalTitle').textContent = label;
+                document.getElementById('letterModalBody').textContent = FEB10[key];
+            });
+            
+            grid.appendChild(btn);
+        });
+    }
 })();
 </script>
 

@@ -1903,6 +1903,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var FEB10_BTNS = [["cooking", "রান্না ও খাওয়া", "🍳"], ["bathing", "একসাথে স্নান", "🚿"], ["ready", "Ready হওয়া", "👕"], ["outing", "ঘুরতে বের হওয়া", "🌆"]];
     
     var grid = document.getElementById('feb10Grid');
+    var modal = document.getElementById('letterModal'); // মডাল এলিমেন্ট ধরা হলো
+
     if (grid){
         grid.innerHTML = '';
         FEB10_BTNS.forEach(function(b){
@@ -1911,10 +1913,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.type = 'button';
             btn.className = 'letter-btn';
             btn.innerHTML = '<span class="ico">' + icon + '</span>' + label;
+            
             btn.addEventListener('click', function(){
                 document.getElementById('letterModalTitle').textContent = label;
                 document.getElementById('letterModalBody').textContent = FEB10[key];
+                
+                // মডাল বক্সটি যেন স্ক্রিনে শো করে, তার জন্য 'show' ক্লাস যোগ করা হলো
+                if (modal) {
+                    modal.classList.add('show');
+                }
             });
+            
             grid.appendChild(btn);
         });
     }
